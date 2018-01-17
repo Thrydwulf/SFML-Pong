@@ -1,6 +1,7 @@
 CC=g++
 CFLAGS=-c -Wall -std=c++11
-LDFLAGS=-lsfml-graphics -lsfml-window -lsfml-system
+SFML=./lib 
+LDFLAGS=-L$(SFML) -lsfml-graphics -lsfml-window -lsfml-system
 SOURCES=main.cpp Ball.cpp Paddle.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=sfml-app
@@ -15,5 +16,3 @@ $(EXECUTABLE): $(OBJECTS)
 
 clean:
 	rm $(OBJECTS) $(EXECUTABLE)
-
-
